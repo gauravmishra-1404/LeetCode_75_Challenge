@@ -1,0 +1,21 @@
+class Solution {
+    public String removeStars(String s) {
+        int l = s.length();
+        StringBuilder sb = new StringBuilder(s);
+        int i=-1,j=0;
+        while(j<l){
+            char ch = s.charAt(j);
+            if(ch!='*'){
+                i++;
+                sb.setCharAt(i,sb.charAt(j));
+            }
+            else{
+                if(i>=0){
+                    i--;
+                }
+            }
+            j++;
+        }
+        return i>=0? sb.substring(0,i+1):"";
+    }
+}
